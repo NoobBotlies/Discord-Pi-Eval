@@ -27,6 +27,7 @@ client.on('messageCreate', async (message) => {
     'reboot',
     'init',
     'halt',
+    'mkdir',
     'mkfs',
     'dd',
     'poweroff',

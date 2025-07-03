@@ -1,0 +1,21 @@
+{
+  "name": "Discord RPi Eval Bot",
+  "version": "1.0.0",
+  "description": "A Discord bot to run safe terminal commands on Raspberry Pi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": {
+    "name": "just-rich",
+    "url": "https://richw.xyz",
+    "email": "rich@richw.xyz"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.11.0"
+  },
+  "engines": {
+    "node": ">=16.9.0"
+  }
+}

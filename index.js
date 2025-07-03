@@ -22,6 +22,7 @@ client.on('messageCreate', async (message) => {
   // 🔒 Dangerous commands blacklist (with sudo auto-detection)
   const blacklist = [
     'rm',
+    'mv',
     'shutdown',
     'reboot',
     'init',

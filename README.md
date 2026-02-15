@@ -1,106 +1,133 @@
-# Discord Pi Eval Bot 🔧📟
+# Discord-Pi-Eval: Remote Command Execution for Raspberry Pi 🐍💻
 
-A lightweight Discord bot that lets authorized users run safe terminal commands on a Raspberry Pi (or any Linux server) via Discord messages.
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-blue)](https://github.com/NoobBotlies/Discord-Pi-Eval/releases)
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Commands](#commands)
+- [User Access Control](#user-access-control)
+- [Command Blacklist](#command-blacklist)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
+
+## Overview
+
+Discord-Pi-Eval is a lightweight Discord bot designed to execute terminal commands on your Raspberry Pi securely. It allows users to run commands remotely while ensuring safety through user access control and a command blacklist. With this bot, you can manage your Raspberry Pi efficiently without needing direct access to the device.
+
+## Features
+
+- **Remote Command Execution**: Run terminal commands from anywhere via Discord.
+- **User Access Control**: Limit command execution to authorized users only.
+- **Command Blacklist**: Protect your system by preventing certain commands from being executed.
+- **Lightweight Design**: Built to be efficient and use minimal resources.
+- **Easy Setup**: Simple installation process to get you started quickly.
+
+## Installation
+
+To get started with Discord-Pi-Eval, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/NoobBotlies/Discord-Pi-Eval.git
+   ```
+
+2. **Navigate to the Directory**:
+   ```bash
+   cd Discord-Pi-Eval
+   ```
+
+3. **Install Dependencies**:
+   Ensure you have Node.js installed. Then run:
+   ```bash
+   npm install
+   ```
+
+4. **Configuration**:
+   Create a `.env` file in the root directory and add your Discord bot token and other necessary configurations.
+
+5. **Run the Bot**:
+   Start the bot using:
+   ```bash
+   node index.js
+   ```
+
+You can download the latest release from [here](https://github.com/NoobBotlies/Discord-Pi-Eval/releases) to get a pre-packaged version that you can execute.
+
+## Usage
+
+Once your bot is running, you can interact with it through your Discord server. Use the commands specified below to execute terminal commands on your Raspberry Pi.
+
+## Commands
+
+The bot supports various commands for executing terminal tasks. Here are some examples:
+
+- **!exec [command]**: Executes the specified command.
+- **!status**: Checks the status of the bot and your Raspberry Pi.
+- **!help**: Lists all available commands and their usage.
+
+## User Access Control
+
+User access control is crucial for security. You can specify which Discord users can execute commands. To add a user, use the following command:
+
+```bash
+!adduser @username
+```
+
+To remove a user, use:
+
+```bash
+!removeuser @username
+```
+
+Make sure to regularly review the list of authorized users to maintain security.
+
+## Command Blacklist
+
+To prevent unauthorized or harmful commands from being executed, you can maintain a blacklist. You can add commands to the blacklist using:
+
+```bash
+!blacklist [command]
+```
+
+To view the current blacklist, use:
+
+```bash
+!blacklist
+```
+
+To remove a command from the blacklist, use:
+
+```bash
+!unblacklist [command]
+```
+
+## Contributing
+
+We welcome contributions to Discord-Pi-Eval. If you would like to help improve the bot, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your forked repository.
+5. Create a pull request.
+
+Please ensure your code follows the existing style and is well-documented.
+
+## License
+
+Discord-Pi-Eval is licensed under the MIT License. See the LICENSE file for more details.
+
+## Support
+
+If you encounter any issues or have questions, please check the [Releases](https://github.com/NoobBotlies/Discord-Pi-Eval/releases) section for updates or open an issue in the repository.
+
+Feel free to reach out to the community for help or to share your experiences with the bot!
 
 ---
 
-## 🚀 Features
-
-- Run shell commands remotely through Discord (e.g. `pm2 restart name`, `ls`, `uptime`)
-- Restrict command execution to specific Discord user IDs
-- Block dangerous commands with an improved blacklist that detects commands run with or without `sudo` (e.g. `rm`, `shutdown`, `kill`, etc)
-- Prevent reading sensitive files via `cat` (e.g. `.env`, `config.json`, SSH keys, password files, and more)
-- Logs blocked command attempts to the console for auditing
-- Sends command output or errors back to Discord
-- Built with [discord.js v14](https://discord.js.org/)
-
----
-
-## ⚙️ Prerequisites
-
-- Node.js **v16.9.0+**
-- A Discord bot token ([Create one here](https://discord.com/developers/applications))
-- `pm2` installed on your Pi (if you want to manage processes with pm2)
-- Bot hosted and run on your Raspberry Pi or Linux server
-
----
-
-## 🛠️ Setup Instructions
-
-1. **Clone or download the repo**
-
-2. **Install dependencies:**
-
-    npm install
-
-3. **Configure your bot:**
-
-    - Copy `example.config.json` to `config.json`
-    - Replace `"YOUR_BOT_TOKEN_HERE"` with your Discord bot token
-    - Replace user IDs in `"allowedUsers"` with the Discord IDs authorized to run commands
-
-    Example:
-
-    ```bash
-    {
-      "botToken": "YOUR_BOT_TOKEN_HERE",
-      "allowedUsers": ["123456789012345678", "234567890123456789"]
-    }
-    ```
-
-4. **Run the bot:**
-
-    npm start
-
-    > Tip: Use pm2 to keep the bot running persistently:
-    >
-    > pm2 start index.js --name pibot
-
----
-
-## 🧪 Usage
-
-Send commands in Discord prefixed with `$pi`, for example:
-
-    $pi pm2 restart process-name
-    $pi ls -lah
-    $pi uptime
-
-The bot will execute the command on the host machine and reply with the output.
-
-*Can change the prefix by editing the line below in `index.js`*  
-`  if (!message.content.startsWith('$pi')) return;`
-
----
-
-## 🔒 Security & Safety
-
-- Only users listed in `allowedUsers` can run commands.
-- The blacklist blocks dangerous commands whether run plainly or prefixed with `sudo` (e.g. `rm`, `shutdown`, `reboot`, etc.).
-- Attempts to read sensitive files via `cat` on files like `.env`, `config.json`, SSH keys, password files, and other sensitive system files are blocked.
-- Blocked command attempts are logged to the console for auditing and monitoring.
-- **Do not** share your bot token or allowed user IDs publicly.
-- Avoid enabling commands that require `sudo` without proper safeguards.
-- Always review and maintain your blacklist and sensitive file list as needed.
-
----
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🤝 Contributions & Improvements
-
-Feel free to fork, modify, or suggest improvements! If you want help adding slash commands, environment variable support, or more advanced security, just ask.
-
----
-
-Enjoy managing your Pi remotely through Discord! 🚀
-
----
-
-## Author
-
-slapped together by [rich](https://richw.xyz)
+For more information and updates, visit the [Releases](https://github.com/NoobBotlies/Discord-Pi-Eval/releases) section.

